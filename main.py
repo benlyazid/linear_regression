@@ -1,18 +1,20 @@
 import matplotlib.pyplot as plt
 import numpy as np
-# INITIALE VALUE FOR THE EQUATION 'Y = aX +b'
-a = 0.1
-b = 100
+def average(arr):
+	return int(sum(arr) / len(arr))
 my_data = np.genfromtxt('data.csv', delimiter= ',')
-print(my_data)
-x = my_data[:, 0].reshape(-1, 1) # set the size of the array
-ones = np.ones([x.shape[0], 1]) # Create matrix(100, 1) continingg 1, X.shape --> (100,1) shape[0] == 100
-x = np.concatenate([ones, x], axis=1 ) # CREATE MATRIX(100, 2) BY concatenate THE ONE and THE X
-#print(x)
-y = my_data[:, 1].reshape(-1,1) # create the y matrix
-#print(y)
-plt.scatter(my_data[:, 0].reshape(-1,1), y)
-plt.show()
-print(my_data[:, 0].reshape(-1,1))
-print('-------------------------')
+
+#x = my_data[:, 0].reshape(-1,1)
+#y = my_data[:, 1].reshape(-1, 1)
+x = [1, 2, 3]
+y= [3, 7, 8]
+print(x)
+print('----------------')
 print(y)
+print('---------------')
+x_bar = (average(x))
+y_bar = (average(y))
+print(x_bar, y_bar)
+plt.scatter(x, y)
+plt.axline((0, 1), (2, 6))
+plt.show()
