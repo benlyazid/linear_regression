@@ -13,7 +13,6 @@ y_bar = (average(y))
 base = 0
 base_2 = 0
 
-# foc calquling base / base_2
 for i in range(len(x)):
 	base += (x[i] - x_bar) * (y[i] - y_bar)
 	base_2 += (x[i] - x_bar)**2
